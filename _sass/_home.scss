@@ -1,0 +1,164 @@
+.home {
+	margin: 50px 0;
+}
+
+.projects {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	@include wider-than(400px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	margin-right: -10px;
+}
+.project {
+	width: 100%;
+	@include wider-than(450px) {
+		width: calc(50% - 10px);
+	}
+	@include wider-than(768px) {
+		width: calc(25% - 10px);
+	}
+    height: 200px;
+
+    background: black;
+
+    position: relative;
+    overflow: hidden;
+
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    align-items: flex-end;
+    color: white;
+    font-size: $large-font-size;
+    // border-radius: 5px;
+
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    transition: background-size 0.15s;
+
+    transform: translateZ(0);
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&::after {
+		content: '';
+	    background: red;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    z-index: 0;
+	    opacity: 0.5;
+	    transition: opacity 0.4s;
+	}
+
+	div {
+		position: absolute;
+	    z-index: 1;
+	    width: 100%;
+	    background: rgba(0, 0, 0, 0.0);
+	    bottom: 0;
+	    left: 0;
+	    padding-left: 7px;
+	    padding-bottom: 2px;
+		z-index: 1;
+		transition: background 0.3s;
+	}
+
+	&:hover {
+		background-size: 105%;
+    	box-shadow: 0 1px 11px rgba(0, 0, 0, 0.08);
+
+    	div {
+    		background: rgba(0, 0, 0, 0.3);
+    	}
+
+		&::after {
+			opacity: 0;
+		}
+	}
+}
+
+.project-soon::before, .project-now::before {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	z-index: 1;
+	font-weight: bold;
+	font-size: $small-font-size;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	transition: opacity 0.3s;
+}
+
+.project.project-soon:hover::before, 
+.project.project-now:hover::before {
+	opacity:0;
+}
+
+.project-now::before {
+	content: 'NEW!';
+}
+.project-soon::before {
+	content: 'Upcoming';
+}
+
+#codeclub {
+	.site-header {
+		background: #6BDEBF;
+	}
+}
+.project-codeclub {
+	&::after {
+		background-color: #2AB38E;
+	}
+	background-image: url(../img/codeclub-thumbnail.jpg);
+}
+
+#minecraft {
+	.site-header {
+		background: #8FD465;
+	}
+}
+.project-minecraft {
+	&::after {
+		background-color: #81B968;
+	}
+	background-image: url(../img/minecraft-thumbnail.jpg);
+}
+
+#metalcraft {
+	.site-header {
+		background-color: #FF9328;
+	}
+}
+.project-metalcraft {
+	&::after {
+		background-color: #E26A2E;
+	}
+	background-image: url(../img/metalcraft-thumbnail.jpg);
+}
+
+#sphero {
+	.site-header {
+		background: #4EB1FF;
+	}
+}
+.project-sphero {
+	&::after {
+		background-color: #0082CD;
+	}
+	background-image: url(../img/sphero-thumbnail.jpg);
+}
