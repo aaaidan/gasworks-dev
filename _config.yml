@@ -2,8 +2,8 @@
 title: The Gasworks
 email: ann@gasworks.nz
 description: We bring science and art to life in South Dunedin, offering a range of fun activities and challenges in a historic setting with both modern and ancient tools.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://gasworks.nz" # the base hostname & protocol for your site
+baseurl: "/gasworks-dev/" # the subpath of your site, e.g. /blog/
+url: "http://aaaidan.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
